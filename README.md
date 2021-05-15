@@ -1,3 +1,3 @@
 # Auto SitRep 
 
-Generates Google Forms link with prefilled data.
+Generates Google Forms link with prefilled SitRep data.
