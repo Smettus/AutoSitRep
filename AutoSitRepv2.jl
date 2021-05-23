@@ -1,6 +1,6 @@
 """
   Created by Tim De Smet
-  Last edit: 23/05/2021@1200
+  Last edit: 23/05/2021@1210
  
    1  7777777 555555
   111     777 55
@@ -24,7 +24,7 @@ promotion = ["175 POL", "160 SSMW", 1] # Select which one
 language = ["N", "F", 1]
 matricule = 696969 # Your matricule here
 address = "Your address"
-sports = "Your sports + duration"
+sports = "Your sports and duration"
 
 
 
