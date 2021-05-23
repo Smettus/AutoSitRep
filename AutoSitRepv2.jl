@@ -1,6 +1,6 @@
 """
   Created by Tim De Smet
-  Last edit: 12/04/2021@2245
+  Last edit: 22/05/2021@2245
  
    1  7777777 555555
   111     777 55
@@ -9,23 +9,27 @@
   111  777    555555
 
   -------[ ENJOY ]-------
-  Prefills SitRep. If variable "autosubmit" is true, it even submits automatically.
+  Generates Google Forms link with prefilled SitRep data. If variable "autosubmit" is true, it even submits automatically.
+
 """
+# todo: dictionary, messenger bot
 
 global autosubmit = false
 #	-------[ Change the next variables ]-------	 #
-lastName = "Test"
-firstName = "Test"
+lastName = "Your last name"
+firstName = "Your first name"
 promotion = ["175 POL", "160 SSMW", 1] # Select which one
 language = ["N", "F", 1]
-matricule = 696969 # number here
-address = "Test"
-sports = "Test"
+matricule = 696969 # Your matricule here
+address = "Your address"
+sports = "What sport did you do?"
+
+
 
 # -------[ Optional ]------- #
 whereAbouts = ["Home", "RMA", 1] # Select which one, if RMA is selected, address will change as well
 mailChecked = ["YES", "NO", 1]
-randsports = ["Run", "Bike", "Strength", "Walk", "Paaldansen", [45, 90], false] # For the liars, change false in true and it will generate a random sport of duration between 45/90min
+randsports = ["Run", "Bike", "Strength", "Walk", "Paaldansen", [45, 90], false] # For the liars, change 'false' in 'true' and it will generate a random sport of duration between 45/90min
 medical = ["P (Completely Ops)", 
 		   "PS (I show symptoms of Corona)", 
 		   "PSE (People around me show symptoms of Corona)", 
@@ -39,7 +43,7 @@ remarques = ""
 #	!-------[ CHANGE WITH CAUTION ]-------!	 #
 using Dates
 global entry = [1981765836, 261023013, 767032974, 1322242599, 239541400, 202815844, 2072704141, 1841305855, 2124830854, 690739259, 1110877319, 1403071410, 1380738579, 1304546116]
-global baselink = "https://docs.google.com/forms/d/e/1FAIpQLSf8B_wpxvXRHIhNBuYjPQA5qT69LbFyn0qpCUOm8VgUfwUezw"
+global baselink = "https://docs.google.com/forms/d/1wFMXmX4su9Q8GTagQk0j21K62AxgBtvGsQE6L7rEWRI"
 global answer = [-1, -1, lastName, firstName, promotion, language, 
 				matricule, whereAbouts, address, mailChecked, 
 				sports, medical, questions, remarques]
@@ -88,7 +92,7 @@ function createLink()
 	end
 
 	println(link)
-	io = open("link.txt", lock = true, append = true)
+	io = open("AutoSitRepGeneratedLink.txt", lock = true, append = true)
 		println(io, "@"*string(DateTime(now()))*": ")
 		println(io, link)
 	close(io)
