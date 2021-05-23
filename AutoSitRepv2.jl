@@ -1,6 +1,6 @@
 """
   Created by Tim De Smet
-  Last edit: 23/05/2021@1145
+  Last edit: 23/05/2021@1200
  
    1  7777777 555555
   111     777 55
@@ -10,11 +10,13 @@
 
   -------[ ENJOY ]-------
   Generates Google Forms link with prefilled SitRep data. If variable "autosubmit" is true, it even submits automatically.
+  	Testing of this autosubmission can be done by making lastName empty (= "") and changing autosubmit to true.
 
 """
 # todo: dictionary, messenger bot
 
-global autosubmit = false
+global autosubmit = false # Automatically submit: 'false' -> 'true'
+
 #	-------[ Change the next variables ]-------	 #
 lastName = "Your last name"
 firstName = "Your first name"
@@ -22,7 +24,7 @@ promotion = ["175 POL", "160 SSMW", 1] # Select which one
 language = ["N", "F", 1]
 matricule = 696969 # Your matricule here
 address = "Your address"
-sports = "What sport did you do?"
+sports = "Your sports + duration"
 
 
 
@@ -91,6 +93,8 @@ function createLink()
 		link*="&submit=Submit"
 	end
 
+	println("Generated link:")
+	println()
 	println(link)
 	io = open("AutoSitRepGeneratedLink.txt", lock = true, append = true)
 		println(io, "@"*string(DateTime(now()))*": ")
@@ -98,3 +102,5 @@ function createLink()
 	close(io)
 end
 createLink()
+println()
+println("Done.")
