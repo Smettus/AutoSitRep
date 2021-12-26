@@ -3,4 +3,4 @@
 Generates Google Forms link with prefilled SitRep data.
 
 
-Currently up to date.
+~~Currently up to date.~~
